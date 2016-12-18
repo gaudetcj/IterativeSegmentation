@@ -69,14 +69,14 @@ def get_iterative_model(img_rows, img_cols):
     input2 = Input(shape=(1, img_rows, img_cols))
     
     # these are shared layer declarations
-    convh1 = Convolution2D(64, 3, 3, activation='relu', border_mode='same')
-    convh2 = Convolution2D(256, 3, 3, activation='relu', border_mode='same')
+    convh1 = Convolution2D(32, 3, 3, activation='relu', border_mode='same')
+    convh2 = Convolution2D(64, 3, 3, activation='relu', border_mode='same')
     
-    convi1 = Convolution2D(64, 3, 3, activation='relu', border_mode='same')
+    convi1 = Convolution2D(32, 3, 3, activation='relu', border_mode='same')
     
-    convmlp1 = Convolution2D(64, 1, 1, activation='relu')
-    convmlp2 = Convolution2D(64, 1, 1, activation='relu')
-    convmlp3 = Convolution2D(1, 1, 1, activation='relu')
+    convmlp1 = Convolution2D(32, 1, 1, activation='relu')
+    convmlp2 = Convolution2D(32, 1, 1, activation='relu')
+    convmlp3 = Convolution2D(1, 1, 1, activation='sigmoid')
     
     # now the actual model
     upperconv1 = convh1(input1)
