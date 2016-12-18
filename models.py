@@ -76,7 +76,7 @@ def get_iterative_model(img_rows, img_cols):
     
     convmlp1 = Convolution2D(32, 1, 1, activation='relu')
     convmlp2 = Convolution2D(32, 1, 1, activation='relu')
-    convmlp3 = Convolution2D(1, 1, 1, activation='sigmoid')
+    convmlp3 = Convolution2D(1, 1, 1)
     
     # now the actual model
     upperconv1 = convh1(input1)
