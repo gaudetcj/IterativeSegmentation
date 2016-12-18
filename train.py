@@ -79,7 +79,7 @@ def train_and_predict():
         EarlyStopping(monitor='loss', patience=5, verbose=0),
         ModelCheckpoint('weights_iter.hdf5', monitor='loss', save_best_only=True)
     ]
-    model.fit([imgs_train, imgs_cnn_mask], imgs_mask_train, batch_size=4, nb_epoch=100, verbose=1, shuffle=True,
+    model.fit([imgs_cnn_mask, imgs_train], imgs_mask_train, batch_size=4, nb_epoch=100, verbose=1, shuffle=True,
               callbacks=callbacks)
               
     print('-'*30)
