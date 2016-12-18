@@ -100,8 +100,9 @@ def train_and_predict():
     print('-'*30)
     print('Predicting masks on test data using iterative model...')
     print('-'*30)
-    imgs_mask_test = model.predict(imgs_test, verbose=1)
-    np.save('imgs_mask_test.npy', imgs_mask_test)
+    imgs_mask_test = np.load('imgs_mask_test.npy')
+    imgs_mask_iter_test = model.predict([imgs_mask_test, imgs_test], verbose=1)
+    np.save('imgs_mask_iter_test.npy', imgs_mask_iter_test)
 
 
 if __name__ == '__main__':
